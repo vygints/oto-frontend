@@ -1,0 +1,24 @@
+{
+  "name": "moble",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express" : "*" ,
+    "connect" : "*" ,
+    "ejs" : "*" ,
+    "jade" : "*",
+    "favicon" : "*",
+    "serve-favicon" : "*",
+    "logger" : "*",
+    "json" : "*",
+    "body-parser" : "*",
+    "errorhandler" : "*",
+    "method-override" : "*",
+    "morgan" : "*",
+    "express-session" : "*",
+    "dotenv" : "*"
+  }
+}

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(name="register", action="/register", method="post")
+    span.label productName
+    input(type="text", name="Product_name", id="pname")
+    span.label Price
+    input(type="number", name="price", id="price")
+    input(type="submit", name="submit", text="register")
+
+  ul
+    each product in products
+      li=  product.name + ':' + product.price
