@@ -1,4 +1,1 @@
-node_modules
-.sock
-*~
-.otto
+.env
