@@ -4,12 +4,26 @@ block content
   h1= title
   p Welcome to #{title}
   form(name="register", action="/register", method="post")
-    span.label productName
+    span.label productName  
     input(type="text", name="Product_name", id="pname")
-    span.label Price
+    span.label Price   
     input(type="number", name="price", id="price")
-    input(type="submit", name="submit", text="register")
+    input(type="submit", name="register", value="register")
+  div
 
-  ul
-    each product in products
-      li=  product.name + ':' + product.price
+  br
+    
+  form(action="/order", method="post")
+      if products
+        each product in products
+          input(type='radio', name='chosen', value=product.name) 
+          |  #{product.name}  #{product.price} 
+          span.label Desired Amount  
+          input(type="number", name="amount", id="amount", value=0)
+          br  
+        input(type="submit", name="order", value="order now")
+
+   ul
+    each order in orders
+      li=  order.id + ':' + order.amount + ':' + order.totalSum 
+  

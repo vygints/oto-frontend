@@ -36,6 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', routes.index);
 app.post( '/register', routes.register );
+app.post( '/order', routes.order );
 
 http.createServer(app).listen(app.get('port'), "0.0.0.0",function(){
   console.log('Express server listening on 0.0.0.0 - port ' + app.get('port'));

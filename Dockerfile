@@ -1,5 +1,5 @@
 FROM node:latest
-MAINTAINER Anton Weiss <ant.weiss@gmail.com>
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
