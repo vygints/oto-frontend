@@ -28,6 +28,6 @@ spec:
     spec:
       containers:
       - name: otofront
-        image: otomato/oto-front:master
+        image: otomato/oto-front:BUILD_NUMBER
         ports:
         - containerPort: 3000
