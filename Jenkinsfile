@@ -37,3 +37,4 @@ node('slave1'){
     stage ('clean-up'){
 	sh "kubectl delete ns ${nsName}"
     }
+}
