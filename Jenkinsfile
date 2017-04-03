@@ -14,7 +14,7 @@ node('slave1'){
   }
   def APP_URL=''
   stage ('deploy-to-testing'){
-        sh "sed -i -- \'s/BUILD_NUMBER/${env.BUILD_NUMBER}/g\' prod-dep.yml"
+        sh "sed -i -- \'s/BUILD_NUMBER/${env.BUILD_NUMBER}/g\' ${svcName}-dep.yml"
 		    sh "kubectl create namespace ${nsName}"
         sh "kubectl apply -f mongodep.yml --validate=false -n ${nsName}"
         sh "kubectl apply -f orders-dep.yml --validate=false -n ${nsName}"
