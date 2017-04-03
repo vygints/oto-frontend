@@ -22,7 +22,7 @@ node('slave1'){
         APP_URL = "<pending>"
         sleep 120
         while ( APP_URL == "<pending>"){
-            APP_URL = sh returnStdout: true, script: "kubectl get svc otoprod --no-headers=true  -n ${nsName} |  awk '{print \$3}'"
+            APP_URL = sh returnStdout: true, script: "kubectl get svc ${svcName} --no-headers=true  -n ${nsName} |  awk '{print \$3}'"
             APP_URL = APP_URL.trim()
             
         }

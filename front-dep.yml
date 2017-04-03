@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: otofrontend
+  name: front
   labels:
-    run: otofrontend
+    run: front
 spec:
   ports:
     - port: 3000
       protocol: TCP
       targetPort: 3000
   selector:
-      run: otofrontend
+      run: front
   type: LoadBalancer
   loadBalancerSourceRanges:
   - 0.0.0.0/0
@@ -18,16 +18,16 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: otofrontend
+  name: front
 spec:
   replicas: 2
   template:
     metadata:
       labels:
-        run: otofrontend
+        run: front
     spec:
       containers:
-      - name: otofront
+      - name: front
         image: otomato/oto-front:BUILD_NUMBER
         ports:
         - containerPort: 3000
