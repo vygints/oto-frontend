@@ -28,6 +28,12 @@ spec:
     spec:
       containers:
       - name: front
-        image: otomato/oto-front:BUILD_NUMBER
+        image: otomato/oto-front:7
         ports:
         - containerPort: 3000
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5

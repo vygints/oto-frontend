@@ -41,4 +41,11 @@ node('slave1'){
 	//sh "kubectl delete ns ${nsName}"
 	    echo 'TODO'
     }
+    stage('deply-to-staging'){
+        sh "kubectl replace -f ${svcName}-dep.yml -n staging"  
+    }
+    stage ('integration-test'){
+        echo "Not implemented"
+    }
+}
 }
