@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: front
-        image: otomato/oto-front:7
+        image: otomato/oto-front:BUILD_NUMBER
         ports:
         - containerPort: 3000
   strategy:
