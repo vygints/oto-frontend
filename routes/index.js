@@ -28,7 +28,7 @@ exports.index = function(req, res){
         {
             console.log(body)
             res.render( 'index', {
-                title : 'Orders',
+                title : 'Hi! This is Vygintas' Orders!',
                 products : products,
                 orders : JSON.parse(body)._embedded.orders
             });
